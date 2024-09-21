@@ -12,6 +12,7 @@ document.querySelectorAll(".back i.flip").forEach((i)=> {
 
 
 })
+
 translate={
     x: -17,
     y: -17
@@ -28,6 +29,7 @@ scale-=0.05;
 opacity-=0.1
 cards[i].style.transform=`translate(${translate.x}px, ${translate.y}px) scale(${scale})`
 cards[i].style.opacity=opacity
+cards[i].style.zIndex=cards.length-i 
 }
 respuestas={
     card1:1,
@@ -64,16 +66,25 @@ document.querySelectorAll(".next-card").forEach(
                     opacity-=0.1
                     cards[i].style.transform=`translate(${translate.x}px, ${translate.y}px) scale(${scale})`
                     cards[i].style.opacity=opacity
+                    cards[i].style.zIndex=cards.length-i 
                     }
                 }else{
                     wrong= this.closest(".card").querySelector(".wrong")
                    wrong.classList.add("active")
                    setTimeout(function(){
                     wrong.classList.remove("active")
-                   }, 400)
+                   }, 300)
                 }
             }else{
-                alert("Select an answer!")
+                cards= document.querySelectorAll(".card:not(.invisible)")
+                cards[0].querySelectorAll("input").forEach((i)=>{
+                    i.classList.add("highlighted")
+                })
+                setTimeout(function(){
+                    cards[0].querySelectorAll("input").forEach((i)=>{
+                        i.classList.remove("highlighted")
+                    })
+                }, 420)
             }
         })
     }
