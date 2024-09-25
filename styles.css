@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -43,7 +45,7 @@ body{
     object-fit: cover;
     display: grid ;
     place-content: center;
-    background-color: white;
+    background-color: black;
     & iframe{
         box-shadow: 0 0 9px rgba(0, 0, 0, 0.3), 0 2px 7px rgba(0, 0, 0, 0.4), 0 2px #ecf0f1;
     }
@@ -69,12 +71,14 @@ body{
     bottom: 1em;
     right: 1em;
     font-size: 1.5em;
+    color: white;
 }
 .back i.flip{
     position: absolute;
     bottom: 1em;
     left: 1em;
     font-size: 1.5em;
+    color: white;
 }
 .card .back{
     transform: perspective(600px) rotateY(180deg);
@@ -163,3 +167,14 @@ body{
         color: cornflowerblue; 
     }
 }
+
+div.score{
+    position: relative;
+    top: 45px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+
